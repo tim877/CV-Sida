@@ -1,15 +1,109 @@
-@font-face {
-    font-family: "My Custom Font";
-src: url(fonts/TAN-MONCHERI.ttf);
-}
-
-h1 {
-    font-family: "My Custom Font";
+:root {
+  --clr-background: #FCF8EF;
+  --clr-bold-text: #56474E;
+  --clr-footer-profile: #AF8878;
+  --clr-regular-text: #bbaba5;
+  --clr-h3: #7A4D36;
 }
 
 body {
-background-color: #fcf9f2;
+  background-color: var(--clr-background);
+  display: grid;
+  grid-template:
+    "header"
+    "main" auto
+    "footer"
+    / 1fr;
+  }
+
+  header {
+    background-color: var(--clr-footer-profile);
+    grid-area: header;
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+  }
+
+main {
+  grid-area: main;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
 }
+
+footer {
+  background-color: var(--clr-footer-profile);
+  grid-area: footer;
+  padding: 0.5rem;
+}
+
+
+@font-face {
+    font-family: "h1 font";
+src: url(fonts/TAN-MONCHERI.ttf);
+}
+
+@font-face {
+  font-family: "Bold Font";
+  src: url(fonts/GlacialIndifference-Bold.otf);
+}
+
+h1 {
+    font-family: "h1 font", Arial, sans-serif;
+    color: var(--clr-bold-text);
+}
+h2 {
+color: var(--clr-bold-text);
+}
+
+h3 {
+    color: var(--clr-h3);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    color: var(--clr-regular-text);
+}
+
+.header-image {
+  display: grid;
+  width: 90vw;
+  margin: 0 auto;
+  justify-items: center;
+  padding-top: 1rem;
+  gap: 1rem;
+}
+.header-image > img{
+  border-radius: 50%;
+width: 200px;
+height: 200px;
+}
+
+.bold {
+  font-family: "Bold Font", Arial, sans-serif;
+  color: var(--clr-bold-text);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 body::before {
     content: "XS";

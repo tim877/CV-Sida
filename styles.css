@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "My Custom Font";
+src: url(fonts/TAN-MONCHERI.ttf);
+}
+
+h1 {
+    font-family: "My Custom Font";
+}
+
+body {
+background-color: #fcf9f2;
+}

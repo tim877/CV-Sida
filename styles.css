@@ -193,6 +193,10 @@ p {
   padding-right: 100px;
 }
 
+.change {
+  display: none;
+}
+
 /* The actual timeline (the vertical ruler) */
 .timeline {
   position: relative;
@@ -208,8 +212,8 @@ p {
   background-color: var(--clr-h3);
   top: 10px;
   bottom: 40px;
+  transform: translateX(-50%);
   left: 0%;
-  margin-left: -3px;
 }
 
 /* Container around content */
@@ -227,10 +231,10 @@ p {
   width: 15px;
   height: 15px;
   background-color: var(--clr-h3);
-  left: -10px;
   top: 80px;
   border-radius: 50%;
-  z-index: 1;
+  transform: translateX(-50%);
+  left: -50%;
 }
 
 /* Place the container to the left */
@@ -290,10 +294,6 @@ body::before {
     content: "S";
   }
 
-  .container::after {
-    left: -148px;
-  }
-
   .bubble-container img {
     max-height: 80px;
   }
@@ -302,10 +302,6 @@ body::before {
 @media (min-width: 768px) {
   body::before {
     content: "M";
-  }
-
-  .container::after {
-    left: -193px;
   }
 
   .bubble-container img {
@@ -361,10 +357,6 @@ body::before {
   .left-1 {
     padding-top: 70px;
   }
-  .container::after {
-    left: -84px; /* Adjust the left position as needed */
-    top: 150px;
-  }
 
   .container {
     padding-left: 0;
@@ -398,16 +390,18 @@ body::before {
   align-items: center;
   }
 
- 
+  .change {
+    display: block;
+  }
+
+.change-2 {
+  display: none;
+}
 
   @media (min-width: 1200px) {
     body::before {
       content: "XL";
     }
-    .container::after {
-      left: -100px; /* Adjust the left position as needed */
-    }
-
     .bubble-container-2 {
       min-width: 250px;
     }
@@ -416,9 +410,6 @@ body::before {
   @media (min-width: 1400px) {
     body::before {
       content: "XXL";
-    }
-    .container::after {
-      left: -115px; /* Adjust the left position as needed */
     }
   }
 }

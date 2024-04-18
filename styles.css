@@ -35,7 +35,7 @@ header {
 }
 
 .timeline {
- grid-area: timeline;
+  grid-area: timeline;
 }
 
 .header-image img {
@@ -83,8 +83,12 @@ h2 {
 h3 {
   color: var(--clr-h3);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 4vw;
-  text-wrap: nowrap;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: auto;
 }
 
 p {
@@ -109,26 +113,17 @@ p {
   color: var(--clr-bold-text);
 }
 
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-left: -20px;
-}
-
 .bubble-container {
   position: relative;
-  text-align: center;
-  color: white;
   width: 70%;
 }
 
 .bubble-container img {
-  width: 80%;
-  max-width: 700px;
+  width: 80%; /* Adjust width as needed */
+  max-width: 200px;
   display: block;
   max-height: 60px;
+  margin: auto;
 }
 
 .row > * {
@@ -163,10 +158,10 @@ p {
 .timeline::after {
   content: "";
   position: absolute;
-  width: 6px;
+  width: 4px;
   background-color: var(--clr-h3);
-  top: 0;
-  bottom: 0;
+  top: 10px;
+  bottom: 40px;
   left: 0%;
   margin-left: -3px;
 }
@@ -185,8 +180,6 @@ p {
   position: absolute;
   width: 25px;
   height: 25px;
-  right: -17px;
-  left: -252px;
   background-color: var(--clr-h3);
   top: 15px;
   border-radius: 50%;
@@ -205,12 +198,11 @@ p {
 
 /* Fix the circle for containers on the right side */
 .right::after {
-  left: -16px;
+  left: -17px;
 }
 
 /* The actual content */
 .content {
-  padding: 20px 30px;
   background-color: var(--clr-background);
   position: relative;
   border-radius: 6px;
@@ -291,80 +283,89 @@ body::before {
   }
 
   body {
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: auto; 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    width: 60%;
+    margin: 0 auto;
+    border: #56474e solid 1px;
   }
 
   main {
-    grid-row: 1 / span 2; 
-    grid-column: 1; 
+    grid-row: 1 / span 2;
+    grid-column: 1;
   }
 
   header {
-    grid-row: 1; 
-    grid-column: 2; 
+    grid-row: 1;
+    grid-column: 2;
   }
 
   .timeline {
-    grid-row: 2; 
+    grid-row: 2;
     grid-column: 2;
   }
 
   footer {
-    grid-row: 3; 
-    grid-column: 1 / span 2;; 
+    grid-row: 3;
+    grid-column: 1 / span 2;
   }
 
+  .header {
+    background-size: cover;
+  }
+
+  .header-image {
+    margin-top: 40px;
+  }
+
+  .header-image > img {
+    width: 300px;
+    height: 300px;
+  }
+  .left-1 {
+    padding-top: 70px;
+  }
 
   .container::after {
     left: -252px;
   }
 
-  .centered {
-    margin-left: -97px;
+  .container {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .bubble-container img {
-    max-height: 120px;
-  }
-}
-
-@media (min-width: 1200px) {
-  body::before {
-    content: "XL";
+    max-height: 60px;
+    max-width: 200px;
   }
 
-  .container::after {
-    left: -297px;
+  h1 {
+    margin-top: 50px;
   }
 
-  .centered {
-    margin-left: -147px;
+
+
+  @media (min-width: 1200px) {
+    body::before {
+      content: "XL";
+    }
+
+    .container::after {
+      left: -297px;
+    }
+
+    
+
   }
 
-  .bubble-container img {
-    max-height: 120px;
-  }
-}
+  @media (min-width: 1400px) {
+    body::before {
+      content: "XXL";
+    }
 
-@media (min-width: 1400px) {
-  body::before {
-    content: "XXL";
-  }
-
-  .container::after {
-    left: -312px;
-  }
-
-  .centered {
-    margin-left: -420px;
-  }
-
-  .bubble-container img {
-    max-height: 120px;
-    max-width: 300px;
-  }
-  h3 {
-    font-size: 2vw;
+    .container::after {
+      left: -312px;
+    }
   }
 }
